@@ -1,0 +1,14 @@
+# conda env create --file environment.yml
+# conda env update --file environment.yml
+name: bench
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - pre-commit
+  - fastapi
+  - uvicorn
+  - oracledb
+  - flake8
+  - black
+  - pip
