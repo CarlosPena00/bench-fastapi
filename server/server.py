@@ -1,4 +1,6 @@
 from fastapi import FastAPI
+from fastapi.responses import RedirectResponse
+
 from src import bound
 from src import sql
 
@@ -24,9 +26,9 @@ async def run_async(cpu_test: bool = True, io_test: bool = True):
     return dict(result=True, cpu_time=cpu_time, io_time=io_time)
 
 
-@app.get("/")
+@app.get("/", response_class=RedirectResponse)
 def home():
-    return "Pong!"
+    return RedirectResponse("/docs")
 
 
 @app.on_event("startup")
