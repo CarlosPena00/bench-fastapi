@@ -12,3 +12,4 @@ dependencies:
   - flake8
   - black
   - pip
+  - locust
