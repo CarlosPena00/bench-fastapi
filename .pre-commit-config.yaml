@@ -10,3 +10,10 @@ repos:
     hooks:
       - id: black
         additional_dependencies: ["click==8.0.4"]
+        args:
+          - --line-length=80
+
+  - repo: https://github.com/asottile/reorder_python_imports
+    rev: v3.9.0
+    hooks:
+      - id: reorder-python-imports

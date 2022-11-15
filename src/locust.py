@@ -1,15 +1,15 @@
+from locust import constant_pacing
+from locust import HttpUser
 from locust import run_single_user
 from locust import TaskSet
-from locust import HttpUser
-from locust import constant_pacing
 
 
-def task_io(taskSet):
-    taskSet.client.get("/run_sync?cpu_test=false&io_test=true")
+def task_io(task):
+    task.client.get("/run_sync?cpu_test=false&io_test=true")
 
 
-def task_cpu(taskSet):
-    taskSet.client.get("/run_sync?cpu_test=true&io_test=false")
+def task_cpu(task):
+    task.client.get("/run_sync?cpu_test=true&io_test=false")
 
 
 class TaskHttp(TaskSet):
